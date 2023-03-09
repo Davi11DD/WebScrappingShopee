@@ -15,20 +15,19 @@ from time import sleep
 import Coleta
 import PopUps
 
-# --------------------------------------------------------------------------------------------
 # =============================== CONFIGS INICIAIS ===========================================
-Servico = Service(ChromeDriverManager().install())
-Opcoes  = Options()
+
 
 
 class navegue :
-    def __init__(self) :
-
-
+    def __init__(self, nomeProduto, nMaxPag) :
+        Servico = Service(ChromeDriverManager().install())
+        Opcoes  = Options()
         Opcoes.add_argument('--window-size=1500,700')
         Opcoes.add_argument('--window-position=15,15')
 
-        # --------------------------------------------------------------------------------------------
+
+
         # ===================================== CÓDIGO ===============================================
         driver = webdriver.Chrome(service=Servico, options=Opcoes)
         driver.get('https://shopee.com.br/')
@@ -40,14 +39,14 @@ class navegue :
         url = driver.current_url
 
         inputSearch = WebDriverWait( driver , 11 ).until(EC.presence_of_element_located( ( By.CSS_SELECTOR, '.shopee-searchbar-input__input') ) )
-        inputSearch.send_keys('Celular')
+        inputSearch.send_keys(nomeProduto)
         inputSearch.send_keys(Keys.ENTER)
 
 
 
 
-        Coleta.Coletar('Celular', driver , url)
+        Coleta.Coletar(nomeProduto, driver , url, nMaxPag)
 
 
-    print('\n\n\nFIM')
+    
 
