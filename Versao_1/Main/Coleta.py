@@ -39,9 +39,8 @@ class Coletar :
              
             Grade     = WebDriverWait( driver , 5 ).until(EC.presence_of_element_located(         (By.CSS_SELECTOR, '.shopee-search-item-result'         ) ) )
             Produtos  = WebDriverWait( Grade  , 5 ).until(EC.presence_of_all_elements_located( (By.CSS_SELECTOR, '.shopee-search-item-result__item'              ) ) )
-          
-
             print(f'\n\n\n\033[1;32mTotal de produtos encontrados: {len(Produtos)}\033[m')
+
 
             for p in range(0, 60, 5) :
                 driver.execute_script("arguments[0].scrollIntoView();", Produtos[p])

@@ -1,11 +1,21 @@
 SITE: "https://shopee.com.br/"
 LINGUAGEM: PYTHON 
 
-execute o main.py 
-    insira o nome do produto
-        codigo ira coletar informações de todas as paginas correspondentes ao que você pesquisou
-        ou ao menos até você fechar o código ou a aba
-(RECOMENDO COLETAR INFORMAÇÔES APENAS ATÉ A PAGINA 10, pois o conteudo fica irrelevante após)    
+Executar:  Main.py 
+
+Informar:
+    - Produto a ser pesquisado
+    - Preço Mínimo
+    - Preço Máximo
+    - Número de paginas a serem coletadas
+
+Retorno: './Versao_2/DadosColetados'
+    - /*nomeDoProduto.txt
+        > Nome,preço e link de cada produto encontrado sobre as preferências de preço mínimo e máximo
+    - /Geral_*nomeDoProduto.txt
+        > Informações complementares sobre a coleta
 
 
-# versao 1.0
+
+(USE A VERSÃO 2)
+# versao 2.0
